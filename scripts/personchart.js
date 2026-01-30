@@ -7,13 +7,13 @@ var lastTime;
 var firstFrame = true;
 var canvas;
 var context;
-var maleBoxColor = '#AACCDD';
+var maleBoxColor = '#98C147';
 var lighterMaleBoxColor;
-var femaleBoxColor = '#CCEEFF';
+var femaleBoxColor = '#EA884D';
 var lighterFemaleBoxColor;
 var unknownGenderBoxColor;
 var lighterUnknownGenderBoxColor;
-var linesColor = '#000000';
+var linesColor = '#E4E57F';
 var animateInterval;
 
 function initPersonChart() {
@@ -37,11 +37,11 @@ function initPersonChart() {
     
     retinaSupport();
     
-    lighterMaleBoxColor = lighterHexColor(maleBoxColor, 0);
-    lighterFemaleBoxColor = lighterHexColor(femaleBoxColor, 0);
+    lighterMaleBoxColor = lighterHexColor(maleBoxColor, 0.1);
+    lighterFemaleBoxColor = lighterHexColor(femaleBoxColor, 0.1);
     
     unknownGenderBoxColor = '#DDD';
-    lighterUnknownGenderBoxColor = lighterHexColor(unknownGenderBoxColor, 0);
+    lighterUnknownGenderBoxColor = lighterHexColor(unknownGenderBoxColor, 0.1);
     
     lastDate = new Date();
     currentScale = 0.5;
@@ -178,7 +178,7 @@ function drawPersonChart()
 }
 
 function drawBoxForPerson(person, boxUnderPosition) {
-    var x, y, w, h, r = 3;
+    var x, y, w, h, r = 10;
     
     if (boxUnderPosition) {
         x = person.left - 2.0;
@@ -310,7 +310,7 @@ function drawBoxForPerson(person, boxUnderPosition) {
     context.fill();
     context.restore();
     
-    context.lineWidth = 0.5;
+    context.lineWidth = 0.1;
     context.strokeStyle = '#333';
     
     context.stroke();
